@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salvation Ministries Wilson Bakery Branch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="logo-container">
+        <div class="logo">
+            <img src="BackgroundEraser_20250927_134718037.png" 
+                 alt="Salvation Ministries logo" 
+                 id="logoImage" 
+                 width="150vw">
+        </div>
+        <div class="logo-text">
+            <div class="marquee-wrapper">
+                <span class="marquee-text" id="marqueeText">WELCOME TO WILSON BAKERY BRANCH</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="clock-section" id="clockSection">
+        <div class="timer-display" id="timerDisplay">00:00:00</div>
+        <div class="time-display" id="timeDisplay">00:00:00 AM</div>
+        
+        <div class="controls-container">
+            <!-- Timer Controls Row (initially hidden) -->
+            <div class="timer-controls" id="timerControls">
+                <!-- Timer Inputs -->
+                <input type="number" id="hoursInput" class="timer-input" placeholder="HH" min="0" max="23">
+                <input type="number" id="minutesInput" class="timer-input" placeholder="MM" min="0" max="59">
+                <input type="number" id="secondsInput" class="timer-input" placeholder="SS" min="0" max="59">
+                
+                <!-- Timer Control Buttons -->
+                <button id="setTimer" class="control-btn">Set Timer</button>
+                <button id="stopTimer" class="control-btn">Stop Timer</button>
+                <button id="restartTimer" class="control-btn">Reset Timer</button>
+            </div>
+            
+            <!-- Main Control Buttons Row (always visible) -->
+            <div class="controls-row">
+                <button id="showControls" class="control-btn">Show Timer Controls</button>
+                <button id="toggleTimer" class="control-btn">Hide Timer</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

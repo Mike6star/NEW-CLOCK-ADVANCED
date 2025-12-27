@@ -1,0 +1,317 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #000;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 20px;
+        }
+        
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 0;
+        }
+        
+        .logo {
+            max-width: 50%;
+            height: auto;
+            margin-bottom: 0;
+        }
+        
+        .logo-text {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-align: center;
+            margin-top: 0;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .marquee-wrapper {
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .marquee-text {
+            color: #ffffff;
+            transition: color 1s ease;
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 15s linear infinite;
+        }
+        
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .clock-section {
+            background-color: #000000;
+            border-radius: 5px;
+            padding: 20px;
+            width: 100%;
+            box-shadow: 0 0 20px rgb(7, 0, 0);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+        }
+        
+        .timer-display {
+            font-size: 7.5rem;
+            font-weight: bold;
+            color: #fff;
+            transition: color 0.12s linear, text-shadow 0.12s linear, 
+                        font-size 0.3s ease, margin 0.3s ease;
+            margin-bottom: 0;
+        }
+        
+        .timer-hidden .timer-display {
+            display: none;
+        }
+        
+        .time-display {
+            font-size: 10rem;
+            font-weight: bold;
+            color: #fff;
+            transition: font-size 0.3s ease, margin 0.3s ease;
+            margin-bottom: 0;
+        }
+        
+        .timer-hidden .time-display {
+            font-size: 13rem;
+            margin-top: 2px;
+            margin-bottom: 4px;
+        }
+        
+        .timer-display.blink-red {
+            color: #ff3b30;
+            text-shadow: 0 0 14px rgba(255, 59, 48, 0.9);
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        /* All controls container */
+        .controls-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 2px;
+        }
+        
+        /* Timer controls - initially hidden */
+        .timer-controls {
+            display: none;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        
+        .timer-controls.active {
+            display: flex;
+        }
+        
+        /* All buttons and inputs in horizontal row */
+        .controls-row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+        }
+        
+        /* Style for timer inputs */
+        .timer-input {
+            width: 60px;
+            height: 40px;
+            font-size: 1rem;
+            text-align: center;
+            background: #000;
+            color: white;
+            border: 1px solid #fff;
+            border-radius: 4px;
+        }
+        
+        .timer-input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        
+        /* Style for all buttons */
+        .control-btn {
+            padding: 8px 12px;
+            font-size: 0.9rem;
+            background: #000;
+            color: white;
+            border: 1px solid #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .control-btn:hover {
+            background: #222;
+        }
+        
+        /* Specific button colors for identification */
+        #setTimer {
+            border-color: #3498db;
+        }
+        
+        #stopTimer {
+            border-color: #e74c3c;
+        }
+        
+        #restartTimer {
+            border-color: #f39c12;
+        }
+        
+        #showControls {
+            border-color: #2ecc71;
+        }
+        
+        #toggleTimer {
+            border-color: #9b59b6;
+        }
+        
+        input[type="file"] {
+            margin-top: 2px;
+            cursor: pointer;
+        }
+
+        img {
+            width: 19vw;
+            max-width: 300px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo {
+                max-width: 80%;
+            }
+
+            .logo-text {
+                font-size: 1.8rem;
+            }
+            
+            .marquee-text {
+                animation-duration: 12s;
+            }
+
+            .time-display {
+                font-size: 6rem;
+            }
+            
+            .timer-hidden .time-display {
+                font-size: 8rem;
+            }
+            
+            .timer-display {
+                font-size: 5rem;
+            }
+            
+            .timer-input {
+                width: 50px;
+                height: 35px;
+                font-size: 0.9rem;
+            }
+            
+            .control-btn {
+                padding: 6px 10px;
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-text {
+                font-size: 1.5rem;
+            }
+            
+            .marquee-text {
+                animation-duration: 10s;
+            }
+
+            .time-display {
+                font-size: 4rem;
+            }
+            
+            .timer-hidden .time-display {
+                font-size: 5rem;
+            }
+            
+            .timer-display {
+                font-size: 3.5rem;
+            }
+            
+            .timer-input {
+                width: 45px;
+                height: 30px;
+                font-size: 0.8rem;
+            }
+            
+            .control-btn {
+                padding: 5px 8px;
+                font-size: 0.75rem;
+            }
+            
+            .controls-row {
+                gap: 5px;
+            }
+            
+            .timer-controls {
+                gap: 5px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .control-btn {
+                padding: 4px 6px;
+                font-size: 0.7rem;
+            }
+            
+            .timer-input {
+                width: 40px;
+                height: 28px;
+                font-size: 0.75rem;
+            }
+        }
