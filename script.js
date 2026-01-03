@@ -15,7 +15,7 @@
         let timerSeconds = 0;
         let timerInterval;
         let blinkInterval;
-        let isTimerVisible = true;
+        let isTimerVisible = false;
 
         function updateTimer() {
             if (timerSeconds > 0) {
@@ -133,7 +133,17 @@
 
         // Marquee text color change functionality
         const marqueeText = document.getElementById('marqueeText');
-        const colors = ['#ffffff', '#3498db', '#e74c3c']; // White, Blue, Red
+        const colors = [
+            '#ffffff', // White
+            '#FFD700', // Gold
+            '#00FF00', // Neon Green
+            '#FF00FF', // Magenta
+            '#00FFFF', // Cyan
+            '#FF4500', // Orange Red
+            '#1E90FF', // Dodger Blue
+            '#FF1493', // Deep Pink
+            '#7FFF00'  // Chartreuse
+        ]; 
         let colorIndex = 0;
         
         function changeMarqueeColor() {
